@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   resources :heropowers
   resources :powers
-  resources :heroes
+  resources :heroes, only: [:index, :show, :create]
 end
