@@ -23,8 +23,9 @@ class PowersController < ApplicationController
     private
 
     def power_params
-        params.permit(:name, :description)
+        params.permit(:id, :name, :description, :created_at, :updated_at, :heropowers_attributes => [:id, :hero_id, :_destroy])
     end
+      
 
     def find_power
         Power.find(params[:id])

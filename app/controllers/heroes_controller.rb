@@ -5,7 +5,7 @@ class HeroesController < ApplicationController
 
     def index
         heroes = Hero.all
-        render json: heroes
+        render json: heroes, serializer: HeroShowSerializer
     end
 
     def show
@@ -26,5 +26,5 @@ class HeroesController < ApplicationController
     def render_not_found_response
         render json: { error: "Hero not found" }, status: :not_found 
     end
-    
+
 end
