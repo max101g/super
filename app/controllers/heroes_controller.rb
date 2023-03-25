@@ -5,7 +5,7 @@ class HeroesController < ApplicationController
 
     def index
         heroes = Hero.all
-        render json: heroes, serializer: HeroShowSerializer
+        render json: heroes
     end
 
     def show

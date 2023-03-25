@@ -12,7 +12,8 @@ class HeropowersController < ApplicationController
 
     def create
         heropower = Heropower.create!(heropower_params)
-        render json: heropower, include: [:hero, :power], status: :created
+        hero = Hero.find_by(id: params[:hero_id])
+        render json: hero, serializer: HeroShowSerializer, status: :created
     end
 
 
